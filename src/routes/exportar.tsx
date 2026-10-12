@@ -1,0 +1,7 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { TopBar } from "@/components/cnh/TopBar";
+import { Button } from "@/components/ui/button";
+import { cnhHead } from "@/lib/cnh-meta";
+export const Route = createFileRoute("/exportar")({ head: () => cnhHead("Exportar habilitação", "Opções de exportação e validação de assinatura."), component: Export });
+function Export() { const [status, setStatus] = useState(false); return <div className="cnh-page"><TopBar title="HABILITAÇÃO" subtitle="Exportar" backTo="/habilitacao"/><main className="cnh-export-panel"><p>Deseja exportar uma cópia do seu documento assinado com certificado digital em conformidade com a Medida Provisória nº 2200-2/2001?</p><p>Sua validade poderá ser confirmada por meio do programa Assinador Serpro. As orientações para instalar o Assinador Serpro e realizar a validação do documento digital estão disponíveis em:</p><a href="https://www.serpro.gov.br/assinador-digital" target="_blank" rel="noreferrer">http://www.serpro.gov.br/assinador-digital,</a><br/>opção Validar Assinatura.<Button variant="cnh" className="cnh-export-action" onClick={() => setStatus(true)}>EXPORTAR</Button>{status && <p className="cnh-status" role="status">Nenhum documento oficial assinado está disponível nesta reprodução.</p>}</main></div>; }

@@ -1,0 +1,33 @@
+{
+  // Configuração do Cloudflare Workers para este app.
+  // O build (`bun run build`) gera o servidor em dist/server e os arquivos
+  // estáticos em dist/client — é isso que vai para o ar.
+  "$schema": "https://raw.githubusercontent.com/cloudflare/workers-sdk/main/packages/wrangler/config-schema.json",
+  "name": "cnh-do-brasil",
+  "main": "dist/server/index.mjs",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // Arquivos estáticos (páginas, imagens, ícones) servidos pela rede da Cloudflare.
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "dist/client"
+  },
+
+  // O build já vem empacotado: sobe como está, sem novo bundling.
+  "no_bundle": true,
+  "rules": [
+    {
+      "type": "ESModule",
+      "globs": ["**/*.mjs", "**/*.js"]
+    }
+  ],
+
+  // Endereços públicos do banco (Supabase). A chave service_role NÃO fica aqui:
+  // ela é um segredo e se adiciona com `npx wrangler secret put`.
+  "vars": {
+    "SUPABASE_URL": "https://rdjouxtnfczndlqopbnc.supabase.co",
+    "SUPABASE_PUBLISHABLE_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJkam91eHRuZmN6bmRscW9wYm5jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE3MzQ4MDIsImV4cCI6MjEwNzMxMDgwMn0.aQbpjuKYhXgfKfUHr0FTIko6EU_l0xQqF1L7UTLhIXg",
+    "SUPABASE_PROJECT_ID": "rdjouxtnfczndlqopbnc"
+  }
+}

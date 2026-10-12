@@ -1,0 +1,9 @@
+# Copie este arquivo para `.dev.vars` e preencha antes de rodar `npx wrangler dev`.
+# O `.dev.vars` fica só na sua máquina (está no .gitignore).
+SUPABASE_URL="https://rdjouxtnfczndlqopbnc.supabase.co"
+SUPABASE_PUBLISHABLE_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJkam91eHRuZmN6bmRscW9wYm5jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE3MzQ4MDIsImV4cCI6MjEwNzMxMDgwMn0.aQbpjuKYhXgfKfUHr0FTIko6EU_l0xQqF1L7UTLhIXg"
+SUPABASE_PROJECT_ID="rdjouxtnfczndlqopbnc"
+
+# Chave privileged do Supabase (Settings → API → service_role).
+# Nunca a coloque no código nem no wrangler.jsonc.
+SUPABASE_SERVICE_ROLE_KEY="cole-a-chave-service-role-aqui"

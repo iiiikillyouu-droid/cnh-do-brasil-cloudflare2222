@@ -1,0 +1,16 @@
+{
+  "id": "/",
+  "name": "CNH do Brasil",
+  "short_name": "CNH do Brasil",
+  "description": "Interface de referência dos serviços de trânsito.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "/icons/app-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icons/app-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
